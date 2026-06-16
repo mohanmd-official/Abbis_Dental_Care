@@ -22,11 +22,18 @@
   "telephone": "+91 73959 95539",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Seelanaickenpatty",
-    "addressLocality": "Salem",
+    "streetAddress": "No. 1/318, 1st Main Rd, Chinnusamy Street, Chinnusamy Nagar",
+    "addressLocality": "Seelanaickenpatti, Salem",
     "addressRegion": "Tamil Nadu",
+    "postalCode": "636201",
     "addressCountry": "IN"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 11.6241434,
+    "longitude": 78.1469688
+  },
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:0x3babef427f628161:0xa839908483171aa8",
   "url": "",
   "priceRange": "$$",
   "openingHours": "Mo-Sa 09:00-20:00"
@@ -251,9 +258,9 @@
   @keyframes scrollline { 0% { transform: scaleY(0); opacity:0; } 50% { transform: scaleY(1); opacity:1; } 100% { transform: scaleY(0); opacity:0; transform-origin: bottom; } }
 
   /* Reveal animation */
-  .reveal { opacity:0; transform: translateY(60px); transition: opacity 1s var(--transition), transform 1s var(--transition); }
+  .reveal { opacity:0; transform: translateY(24px); transition: opacity 0.35s ease-out, transform 0.35s ease-out; }
   .reveal.visible { opacity:1; transform: translateY(0); }
-  .reveal-scale { opacity:0; transform: scale(0.92); transition: opacity 1s var(--transition), transform 1s var(--transition); }
+  .reveal-scale { opacity:0; transform: scale(0.96); transition: opacity 0.35s ease-out, transform 0.35s ease-out; }
   .reveal-scale.visible { opacity:1; transform: scale(1); }
 
   /* About doctor */
@@ -774,6 +781,9 @@
       </div>
     </div>
     <div class="testi-track">
+      <!-- REVIEWS_START — auto-populated by Google Places API -->
+      <!-- STATIC FALLBACK (shown only if API fails to load) -->
+      <!--
       <div class="testi-card reveal">
         <div class="testi-head"><div class="testi-avatar">S</div><div><strong>Saravanan Ilango</strong><div class="stars">★★★★★</div><div style="font-size:0.75rem; color:var(--text-muted);">Local Guide · 117 reviews</div></div></div>
         <p>"Excellent experience with Dr. Abbi. The clinic is hygienic, and the waiting area is well maintained. She patiently listens to concerns, explains the diagnosis clearly using X-rays…"</p>
@@ -806,9 +816,11 @@
         <div class="testi-head"><div class="testi-avatar">L</div><div><strong>Lakshmi Lakshmi</strong><div class="stars">★★★★★</div></div></div>
         <p>"Nice treatment... doctor is so kind 😍🥰 before and after, my teeth feel so clean. Thanks, Abbi's Dental Care 🩷"</p>
       </div>
+      -->
+      <!-- REVIEWS_END -->
     </div>
     <div class="btn-row">
-      <a href="https://share.google/Z6tU0c3KC80mxzRcP" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="testi.viewall">⭐ View All Reviews on Google</a>
+      <a href="https://www.google.com/maps/place/Abbi's+Dental+Care+%2B/@11.6241486,78.1443885,17z/data=!4m8!3m7!1s0x3babef427f628161:0xa839908483171aa8!8m2!3d11.6241434!4d78.1469688!9m1!1b1!16s%2Fg%2F11zkt_rmwj" target="_blank" rel="noopener" class="btn btn-outline" data-i18n="testi.viewall">⭐ View All Reviews on Google</a>
     </div>
   </div>
 </section>
@@ -884,7 +896,7 @@
       <p data-i18n="map.p">Abbi's Dental Care, Seelanaickenpatty, Salem, Tamil Nadu</p>
     </div>
     <div class="map-wrap reveal" style="margin-top:40px;">
-      <iframe loading="lazy" src="https://www.google.com/maps?q=Seelanaickenpatty,+Salem,+Tamil+Nadu&output=embed"></iframe>
+      <iframe loading="lazy" src="https://www.google.com/maps?q=Abbi's+Dental+Care+%2B,+CHINNUSAMY+STREET,+NO.+1/318,+1st+Main+Rd,+Chinnusamy+Nagar,+Seelanaickenpatti,+Salem,+Tamil+Nadu+636201&output=embed"></iframe>
     </div>
     <div class="map-buttons">
       <a href="https://www.google.com/maps/dir/?api=1&destination=Seelanaickenpatty,Salem,Tamil+Nadu" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="common.directions">📍 Directions</a>
@@ -1081,6 +1093,7 @@
       "apt.prefdate": 'Preferred Date <span class="req">*</span>',
       "apt.preftime": 'Preferred Time <span class="req">*</span>',
       "apt.submit": "Request Appointment",
+      "apt.or": "or book instantly via",
       "apt.why.title": "Why Book Online?",
       "apt.why.1": "✓ Instant confirmation request",
       "apt.why.2": "✓ WhatsApp updates on your appointment",
@@ -1186,6 +1199,7 @@
       "apt.prefdate": 'விருப்பமான தேதி <span class="req">*</span>',
       "apt.preftime": 'விருப்பமான நேரம் <span class="req">*</span>',
       "apt.submit": "சந்திப்பு கோரவும்",
+      "apt.or": "அல்லது இதன் மூலம் உடனே பதிவு செய்யவும்",
       "apt.why.title": "ஏன் ஆன்லைனில் பதிவு செய்ய வேண்டும்?",
       "apt.why.1": "✓ உடனடி உறுதிப்படுத்தல் கோரிக்கை",
       "apt.why.2": "✓ உங்கள் சந்திப்பு குறித்த WhatsApp புதுப்பிப்புகள்",
@@ -1262,7 +1276,7 @@
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -10% 0px' });
   revealEls.forEach(el => observer.observe(el));
 
   // Animated counters
@@ -1586,6 +1600,60 @@
       fileEl.value = '';
     });
   })();
+</script>
+
+<!-- Google Reviews — auto-fetched live from Places API (New) -->
+<script>
+  function starsHtml(rating) {
+    var full = Math.round(rating || 5);
+    return '★★★★★'.slice(0, full) + '☆☆☆☆☆'.slice(0, 5 - full);
+  }
+
+  function renderReviews(reviews) {
+    var track = document.querySelector('#testimonials .testi-track');
+    if (!track || !reviews || !reviews.length) return;
+    track.innerHTML = '';
+    reviews.forEach(function(r) {
+      var card    = document.createElement('div');
+      card.className = 'testi-card reveal visible';
+      var name    = ((r.authorAttribution && r.authorAttribution.displayName) || 'Google User').replace(/</g,'&lt;');
+      var text    = (typeof r.text === 'string' ? r.text : (r.text && r.text.text) || '').replace(/</g,'&lt;');
+      var time    = r.relativePublishTimeDescription || '';
+      var stars   = starsHtml(r.rating);
+      var initial = name.charAt(0).toUpperCase();
+      card.innerHTML =
+        '<div class="testi-head">' +
+          '<div class="testi-avatar">' + initial + '</div>' +
+          '<div><strong>' + name + '</strong>' +
+          '<div class="stars">' + stars + '</div>' +
+          '<div style="font-size:0.75rem;color:var(--text-muted);">' + time + '</div></div>' +
+        '</div>' +
+        '<p>"' + text + '"</p>';
+      track.appendChild(card);
+    });
+  }
+
+  async function initGoogleReviews() {
+    try {
+      var Place = (await google.maps.importLibrary('places')).Place;
+      var results = await Place.searchByText({
+        textQuery: "Abbi's Dental Care +, Chinnusamy Street, Seelanaickenpatti, Salem, Tamil Nadu 636201",
+        fields: ['reviews'],
+        maxResultCount: 1
+      });
+      if (results && results.places && results.places.length > 0) {
+        var reviews = results.places[0].reviews;
+        if (reviews && reviews.length) renderReviews(reviews);
+      }
+    } catch(e) {
+      console.warn('Google Reviews could not load:', e);
+    }
+  }
+</script>
+<script>
+  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+  ({key: "AIzaSyAarQsKrCCSrFeyoBMAonq6SP46Se8eVCM", v: "weekly"});
+  initGoogleReviews();
 </script>
 
 </body>
